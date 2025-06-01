@@ -13,7 +13,7 @@ t_d = [1e-4,1e-4,1e-4]% [N m^2] - Disturbance torque
 initial_euler_angles =[30,30,30].*deg% Initial Euler angles
 init_q = eul2quat(initial_euler_angles,"ZYX")% Inital quaternion
 w = [0,0,0].*deg% [deg/s] Initial angular velocity in the
-sim_time = 1500 % [s] - Simulation duration
+sim_time = 1500 % [s] - Simulation durationt_d
 T = 2*pi/n % [s] - Orbital period 
 
 % Attitude commands:

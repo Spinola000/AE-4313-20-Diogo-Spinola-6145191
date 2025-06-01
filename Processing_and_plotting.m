@@ -98,7 +98,7 @@ saveas(fig, 'omega.png')
 % Plot Euler angles, angular velocity, and torques in one tiled layout
 fig = figure;
 
-t = tiledlayout(1, 3, 'Padding', 'compact', 'TileSpacing', 'compact');
+t = tiledlayout(1, 1, 'Padding', 'compact', 'TileSpacing', 'compact');
 fig.Position(3:4) = [1200 400];  % [width, height] in pixels
 
 % ------------------ Tile 1: Euler Angles + Single Reference ------------------
@@ -118,6 +118,12 @@ xlabel('Time past first Epoch [s]')
 ylabel('Euler Angles [deg.]')
 legend()
 title('Euler Angles and Reference Command')
+% Save figure
+saveas(fig, ['Euler_summary.png'])
+fig = figure;
+
+t = tiledlayout(1, 2, 'Padding', 'compact', 'TileSpacing', 'compact');
+fig.Position(3:4) = [1200 400];  % [width, height] in pixels
 
 % ------------------ Tile 2: Angular Velocities ------------------
 nexttile
@@ -146,7 +152,7 @@ margin = 0.1 * yrange;
 ylim([ymin - margin, ymax + margin])
 
 % Save figure
-saveas(fig, 'euler_vel_torque_summary.png')
+saveas(fig, 'vel_torque_summary.png')
 
 %% Performance metrics
 % Run loading block befor this:
